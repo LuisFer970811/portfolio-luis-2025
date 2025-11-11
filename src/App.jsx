@@ -205,7 +205,7 @@ function App() {
     Analista de Datos &amp; Economista
   </p>
   <p className="experience-meta">
-    Seguros / Servicios Financieros · Ecuador · 2018&nbsp;–&nbsp;2024
+    Seguros / Servicios Financieros · Ecuador · 2021&nbsp;–&nbsp;2025
   </p>
 
   <p className="section-text">
@@ -246,17 +246,18 @@ function App() {
           </div>
         </section>
 
-        {/* PROYECTOS */}
+       {/* PROYECTOS */}
 <section id="proyectos">
   <div className="container">
-    <p className="section-kicker">Trabajos</p>
-    <h2 className="section-title">Proyectos destacados</h2>
+    <p className="section-kicker">Proyectos y Casos Prácticos</p>
+    <h2 className="section-title">Explorando los datos desde distintas perspectivas</h2>
 
     <p className="section-text" style={{ marginBottom: "1.5rem" }}>
-      Estoy comenzando a documentar y publicar mis proyectos. Aquí verás
-      ejemplos de dashboards, automatizaciones y análisis que voy
-      construyendo. Esta sección irá creciendo a medida que suba nuevos
-      casos reales.
+      En esta sección presento ejemplos y prototipos enfocados en el análisis de datos, 
+      automatización y visualización. Cada proyecto muestra cómo convertir la información 
+      en decisiones accionables, independientemente del sector o tipo de organización. 
+      Son ejercicios reales que reflejan mi enfoque global: combinar 
+      <strong> técnica, análisis y diseño visual </strong> para crear soluciones efectivas.
     </p>
 
     <div className="projects-grid">
@@ -264,12 +265,8 @@ function App() {
       <article className="project-card project-card--powerbi">
         <div className="project-header">
           <div>
-            <h3 className="project-title">
-              Dashboard de ventas en Power BI (en construcción)
-            </h3>
-            <p className="project-meta">
-              Seguimiento comercial · Rentabilidad · Segmentación
-            </p>
+            <h3 className="project-title">Dashboard de KPIs y cumplimiento en Power BI</h3>
+            <p className="project-meta">Evolución · Objetivos · Rendimiento</p>
           </div>
           <div className="project-icon">📊</div>
         </div>
@@ -281,14 +278,13 @@ function App() {
         </div>
 
         <p className="section-text">
-          Modelo de ventas con métricas de ingresos, margen y
-          segmentación de clientes por región. Incluye visualizaciones
-          interactivas y filtros por canal, producto y periodo.
-          Próximamente añadiré captura, enlace y detalles técnicos.
+          Dashboard interactivo con métricas de cumplimiento, evolución y desempeño general. 
+          Incluye visualizaciones comparativas, análisis de variaciones y seguimiento por 
+          categoría o periodo. Diseñado para adaptarse a cualquier tipo de negocio o área funcional.
         </p>
 
         <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Enlace disponible pronto</span>
+          <span style={{ opacity: 0.7 }}>Ejemplo disponible próximamente</span>
         </div>
       </article>
 
@@ -296,12 +292,8 @@ function App() {
       <article className="project-card project-card--sql">
         <div className="project-header">
           <div>
-            <h3 className="project-title">
-              Modelo de reporting financiero en SQL (borrador)
-            </h3>
-            <p className="project-meta">
-              Consultas parametrizadas · Indicadores clave
-            </p>
+            <h3 className="project-title">Datamart en SQL para reporting y análisis</h3>
+            <p className="project-meta">Consultas optimizadas · Indicadores clave</p>
           </div>
           <div className="project-icon">🧮</div>
         </div>
@@ -309,63 +301,53 @@ function App() {
         <div className="project-tech">
           <span className="project-pill">SQL Server</span>
           <span className="project-pill">Views &amp; Stored Procedures</span>
-          <span className="project-pill">Optimizaciones</span>
+          <span className="project-pill">Optimización</span>
         </div>
 
         <p className="section-text">
-          Conjunto de consultas y vistas pensadas para alimentar
-          dashboards de negocio: márgenes, siniestralidad, productividad
-          comercial y otros KPIs financieros. El objetivo es dejar una
-          capa de datos limpia y reutilizable.
+          Conjunto de consultas y vistas diseñadas para generar una capa de datos limpia, 
+          estandarizada y reutilizable. Este modelo sirve como base para dashboards en Power BI, 
+          reportes financieros o análisis de desempeño, sin importar el tipo de sector.
         </p>
 
         <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Scripts y diagrama disponibles pronto</span>
+          <span style={{ opacity: 0.7 }}>Scripts y documentación técnica en progreso</span>
         </div>
       </article>
 
-      {/* R / ESTADÍSTICA */}
+      {/* R / ANÁLISIS ESTADÍSTICO */}
       <article className="project-card project-card--r">
         <div className="project-header">
           <div>
-            <h3 className="project-title">
-              Análisis exploratorio en R (en preparación)
-            </h3>
-            <p className="project-meta">
-              Series temporales · Tendencias · Distribuciones
-            </p>
+            <h3 className="project-title">Análisis exploratorio y predicciones con R</h3>
+            <p className="project-meta">Series temporales · Tendencias · Predicción</p>
           </div>
           <div className="project-icon">📈</div>
         </div>
 
         <div className="project-tech">
           <span className="project-pill">R</span>
-          <span className="project-pill">RStudio</span>
           <span className="project-pill">tidyverse</span>
+          <span className="project-pill">forecast</span>
         </div>
 
         <p className="section-text">
-          Notebook orientado a entender el comportamiento de ventas y
-          siniestros: limpieza de datos, análisis de outliers, series
-          temporales y visualizaciones para detectar patrones de
-          estacionalidad y riesgos.
+          Análisis exploratorio de datos con foco en la detección de patrones, 
+          estacionalidad y tendencias. Uso de modelos de predicción para proyectar resultados 
+          o detectar anomalías. Enfocado a mostrar la potencia del análisis estadístico en contextos reales.
         </p>
 
         <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Notebook y gráficos en camino</span>
+          <span style={{ opacity: 0.7 }}>Notebook y visualizaciones disponibles pronto</span>
         </div>
       </article>
 
-      {/* PYTHON */}
+      {/* PYTHON / AUTOMATIZACIÓN */}
       <article className="project-card project-card--python">
         <div className="project-header">
           <div>
-            <h3 className="project-title">
-              Scripts en Python para automatizar tareas (idea)
-            </h3>
-            <p className="project-meta">
-              Limpieza de datos · Automatización ligera
-            </p>
+            <h3 className="project-title">Automatización ligera de procesos con Python</h3>
+            <p className="project-meta">Procesamiento de datos · Integraciones · APIs</p>
           </div>
           <div className="project-icon">🐍</div>
         </div>
@@ -377,59 +359,79 @@ function App() {
         </div>
 
         <p className="section-text">
-          Colección de scripts para tareas repetitivas: normalización de
-          ficheros CSV, cruces entre bases de datos y generación de
-          extractos listos para consumir en Power BI u otras
-          herramientas de BI.
+          Scripts diseñados para optimizar tareas repetitivas: limpieza de ficheros, 
+          conexión con APIs y generación automática de reportes. Ideal para reducir 
+          tiempo manual y mejorar la eficiencia de los flujos de trabajo.
         </p>
 
         <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Repositorio GitHub próximamente</span>
+          <span style={{ opacity: 0.7 }}>Repositorio GitHub en desarrollo</span>
         </div>
       </article>
 
-      {/* n8n */}
+      {/* n8n / WORKFLOW */}
       <article className="project-card project-card--n8n">
         <div className="project-header">
           <div>
-            <h3 className="project-title">
-              Automatización de reportes con n8n (en diseño)
-            </h3>
-            <p className="project-meta">
-              APIs · Notificaciones · Integraciones
-            </p>
+            <h3 className="project-title">Flujos automatizados de reporting con n8n</h3>
+            <p className="project-meta">APIs REST · Notificaciones · Integraciones</p>
           </div>
           <div className="project-icon">⚙️</div>
         </div>
 
         <div className="project-tech">
           <span className="project-pill">n8n</span>
-          <span className="project-pill">APIs REST</span>
-          <span className="project-pill">Notificaciones</span>
+          <span className="project-pill">Automatización</span>
+          <span className="project-pill">Workflows</span>
         </div>
 
         <p className="section-text">
-          Flujo automatizado que extrae datos, genera reportes y envía
-          alertas a los responsables de negocio. Idea pensada para
-          reducir tareas manuales y mejorar la frecuencia del reporting.
-          Se actualizará con el workflow real y documentación.
+          Flujo automatizado que conecta fuentes de datos, ejecuta procesos y 
+          envía reportes automáticos. Ejemplo de integración moderna para mejorar 
+          la frecuencia del reporting y reducir tareas operativas.
         </p>
 
         <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Workflow disponible pronto</span>
+          <span style={{ opacity: 0.7 }}>Workflow documentado en breve</span>
+        </div>
+      </article>
+
+      {/* HOBBY / VIDA REAL */}
+      <article className="project-card project-card--personal">
+        <div className="project-header">
+          <div>
+            <h3 className="project-title">Datos de vida real y proyectos personales</h3>
+            <p className="project-meta">Hábitos · Actividad física · Creatividad con datos</p>
+          </div>
+          <div className="project-icon">🌍</div>
+        </div>
+
+        <div className="project-tech">
+          <span className="project-pill">Excel</span>
+          <span className="project-pill">Power BI</span>
+          <span className="project-pill">R / Python</span>
+        </div>
+
+        <p className="section-text">
+          Proyectos personales donde aplico analítica y visualización a hobbies y 
+          rutinas diarias: rendimiento deportivo, hábitos de lectura o planificación. 
+          Una forma distinta de mostrar cómo los datos también pueden inspirar y mejorar la vida cotidiana.
+        </p>
+
+        <div className="project-links">
+          <span style={{ opacity: 0.7 }}>Casos personales en preparación</span>
         </div>
       </article>
     </div>
 
     <p className="section-text" style={{ marginTop: "1.5rem" }}>
-      Próximamente iré añadiendo enlaces a{" "}
-      <strong>Power BI Service</strong>, repositorios de{" "}
-      <strong>GitHub</strong> y ejemplos interactivos para que puedas
-      explorar cómo trabajo.
+      Próximamente incluiré enlaces directos a <strong>Power BI Service</strong>, 
+      repositorios de <strong>GitHub</strong> y notebooks interactivos. 
+      Cada ejemplo está diseñado para mostrar cómo los datos pueden contar historias, 
+      optimizar procesos y generar impacto real.
     </p>
   </div>
 </section>
-
 
         {/* CONTACTO */}
         <section id="contacto">
