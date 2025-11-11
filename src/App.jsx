@@ -316,32 +316,49 @@ function App() {
       </article>
 
       {/* R / ANÁLISIS ESTADÍSTICO */}
-      <article className="project-card project-card--r">
-        <div className="project-header">
-          <div>
-            <h3 className="project-title">Análisis exploratorio y predicciones con R</h3>
-            <p className="project-meta">Series temporales · Tendencias · Predicción</p>
-          </div>
-          <div className="project-icon">📈</div>
-        </div>
+<article className="project-card project-card--r">
+  <div className="project-header">
+    <div>
+      <h3 className="project-title">Análisis exploratorio y predicciones con R</h3>
+      <p className="project-meta">Series temporales · Tendencias · Predicción</p>
+    </div>
+    <div className="project-icon">📈</div>
+  </div>
 
-        <div className="project-tech">
-          <span className="project-pill">R</span>
-          <span className="project-pill">tidyverse</span>
-          <span className="project-pill">forecast</span>
-        </div>
+  <div className="project-tech">
+    <span className="project-pill">R</span>
+    <span className="project-pill">tidyverse</span>
+    <span className="project-pill">forecast</span>
+  </div>
 
-        <p className="section-text">
-          Análisis exploratorio de datos con foco en la detección de patrones, 
-          estacionalidad y tendencias. Uso de modelos de predicción para proyectar resultados 
-          o detectar anomalías. Enfocado a mostrar la potencia del análisis estadístico en contextos reales.
-        </p>
+  <p className="section-text">
+    Análisis exploratorio de datos con foco en la detección de patrones,
+    estacionalidad y tendencias. Uso de modelos de predicción para proyectar
+    resultados o detectar anomalías. Enfocado a mostrar la potencia del análisis
+    estadístico en contextos reales.
+  </p>
 
-        <div className="project-links">
-          <span style={{ opacity: 0.7 }}>Notebook y visualizaciones disponibles pronto</span>
-        </div>
-      </article>
-
+  <div className="project-links">
+    <a
+      href="https://luisfer970811.github.io/dashboard-pib-mundial-2014/gdp_dashboard.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-3 px-5 py-2 bg-emerald-500 text-white font-medium rounded-xl shadow hover:bg-emerald-600 transition"
+    >
+      🌎 Proyecto 1: Ver Dashboard en vivo
+    </a>
+  </div>
+  <div className="project-links">
+    <a
+      href="https://luisfer970811.github.io/dashboard-pib-mundial-2014/gdp_dashboard.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-3 px-5 py-2 bg-emerald-500 text-white font-medium rounded-xl shadow hover:bg-emerald-600 transition"
+    >
+      🌎 Proyecto 2: Ver Dashboard en vivo
+    </a>
+  </div>
+</article>
       {/* PYTHON / AUTOMATIZACIÓN */}
       <article className="project-card project-card--python">
         <div className="project-header">

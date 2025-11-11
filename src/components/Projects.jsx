@@ -74,32 +74,36 @@ function Projects() {
           </article>
 
           {/* R – ANÁLISIS EXPLORATORIO Y PREDICCIÓN */}
-          <article className="project-card">
-            <h3 className="project-title">
-              Análisis exploratorio y predicciones con R
-            </h3>
-            <p className="project-meta">R · RStudio · tidyverse</p>
-            <p className="section-text">
-              Proyecto en R centrado en entender la evolución de una serie de
-              tiempo (por ejemplo: demanda, uso de un servicio o actividad física)
-              y generar predicciones a corto plazo usando modelos sencillos.
-            </p>
-            <ul className="experience-list">
-              <li>
-                Limpieza y transformación con <strong>tidyverse</strong>.
-              </li>
-              <li>
-                Visualización de tendencias, estacionalidad y cambios estructurales.
-              </li>
-              <li>
-                Modelos de pronóstico (ARIMA / modelos básicos) y evaluación del
-                error.
-              </li>
-            </ul>
-            <div className="project-links">
-              <span style={{ opacity: 0.7 }}>Notebook y gráficos en camino</span>
-            </div>
-          </article>
+<article className="project-card">
+  <h3 className="project-title">
+    Análisis exploratorio y predicciones con R
+  </h3>
+
+  <p className="project-meta">R • RStudio • tidyverse</p>
+
+  <p className="section-text">
+    Proyecto en R centrado en entender la evolución de una serie de tiempo
+    (por ejemplo: demanda, uso de un servicio o actividad física) y generar
+    predicciones a corto plazo usando modelos estadísticos y visualización de datos.
+  </p>
+
+  <ul className="experience-list">
+    <li>Limpieza y transformación con <strong>tidyverse</strong>.</li>
+    <li>Visualización de tendencias, estacionalidad y cambios estructurales.</li>
+    <li>Modelos de pronóstico (ARIMA / regresión lineal) y evaluación del error.</li>
+  </ul>
+
+  {/* Botón de enlace al dashboard */}
+  <a
+    href="https://luisfer970811.github.io/dashboard-pib-mundial-2014/gdp_dashboard.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-4 px-5 py-2 bg-emerald-500 text-white font-medium rounded-xl shadow hover:bg-emerald-600 transition"
+  >
+    🌎 Ver Dashboard en vivo
+  </a>
+</article>
+
 
           {/* PYTHON – AUTOMATIZACIÓN LIGERA */}
           <article className="project-card">
