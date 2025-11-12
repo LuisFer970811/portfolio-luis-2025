@@ -348,7 +348,16 @@ function App() {
       🌎 Proyecto 1: Ver Dashboard en vivo
     </a>
   </div>
-  
+  <div className="project-links">
+    <a
+      href="https://luisfer970811.github.io/analisis-visualizacion-master-ceu/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-3 px-5 py-2 bg-emerald-500 text-white font-medium rounded-xl shadow hover:bg-emerald-600 transition"
+    >
+      🌎 Proyecto 2: Limpieza, depuración de datos y análisis descriptivo
+    </a>
+  </div>
 </article>
       {/* PYTHON / AUTOMATIZACIÓN */}
       <article className="project-card project-card--python">
