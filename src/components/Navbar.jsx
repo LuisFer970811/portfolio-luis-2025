@@ -11,6 +11,7 @@ function Navbar() {
           <a href="#home" className="hover:text-blue-400 transition">Inicio</a>
           <a href="#about" className="hover:text-blue-400 transition">Sobre mí</a>
           <a href="#projects" className="hover:text-blue-400 transition">Proyectos</a>
+          <a href="/servicios">Servicios</a>
           <a href="#contact" className="hover:text-blue-400 transition">Contacto</a>
         </div>
       </nav>

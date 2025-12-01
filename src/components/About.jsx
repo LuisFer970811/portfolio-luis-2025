@@ -1,4 +1,4 @@
-import miFoto from "./assets/luis-ayala.jpg";
+import miFoto from "./assets/luis.ayala.jpg";
 // src/components/About.jsx
 function About() {
   return (
