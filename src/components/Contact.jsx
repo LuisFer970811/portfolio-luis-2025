@@ -70,7 +70,7 @@ function Contact() {
           <form
             className="contact-form"
             method="POST"
-            action="http://localhost:5678/webhook-test/portfolio-lead"
+            action="http://localhost:5678/webhook/portfolio-lead"
           >
             <label className="contact-label">
               Nombre
