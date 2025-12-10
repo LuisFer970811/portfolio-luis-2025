@@ -1,7 +1,7 @@
 // src/components/ChatWidget.jsx
 import { useState } from "react";
 
-const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/portfolio-lead";
+const N8N_WEBHOOK_URL = "http://localhost:5678/webhook/portfolio-lead";
 
 function getBotReply(message) {
   const text = message.toLowerCase();
@@ -9,7 +9,7 @@ function getBotReply(message) {
   if (text.includes("servicio") || text.includes("servicios")) {
     return (
       "Puedo ayudarte con dashboards en Power BI, reporting automatizado " +
-      "con SQL / Python / n8n y arquitectura ligera de datos para seguros y finanzas. " +
+      "con SQL / R Studio/ Python / n8n y arquitectura ligera de datos para seguros y finanzas. " +
       "Si quieres detalles, dime por ejemplo: 'cuéntame de dashboards' o 'automatización'."
     );
   }
