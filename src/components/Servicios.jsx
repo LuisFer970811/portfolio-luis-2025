@@ -83,7 +83,7 @@ export default function Servicios() {
             <aside className="hero-card-services">
               <h3>Arquitectura ligera de datos para tu negocio</h3>
               <ul>
-                <li>Integración de fuentes: Excel, SQL, CRM, ERP, APIs…</li>
+                <li>Integración de fuentes: Excel, SQL, CRM, ERP, APIs</li>
                 <li>Modelos de datos limpios listos para Power BI.</li>
                 <li>Dashboards ejecutivos con KPIs claros, sin ruido.</li>
                 <li>
@@ -278,6 +278,9 @@ export default function Servicios() {
               </a>
             </div>
           </div>
+          <section>
+            
+          </section>
         </section>
       </main>
 

@@ -635,15 +635,16 @@ export default function Home() {
   </div>
 </section>
 
-        {/* =======================
+                {/* =======================
             CONTACTO
         ======================== */}
-        <section id="contacto">
+        <section id="contacto" className="section">
           <div className="container">
             <p className="section-kicker">Contacto</p>
             <h2 className="section-title">Hablemos</h2>
 
             <div className="contact-grid">
+              {/* Columna izquierda: datos de contacto */}
               <div>
                 <p className="section-text">
                   ¿Quieres revisar un dashboard, automatizar un proceso o
@@ -651,6 +652,7 @@ export default function Home() {
                   colaborar en proyectos freelance, roles full-time o
                   iniciativas académicas.
                 </p>
+
                 <ul className="contact-list">
                   <li>
                     📧 <strong>Email:</strong>{" "}
@@ -661,7 +663,7 @@ export default function Home() {
                   <li>
                     💼 <strong>LinkedIn:</strong>{" "}
                     <a
-                      href="https://www.linkedin.com/in/luis-fernando-ayala-64a0a91b8/"
+                      href="https://www.linkedin.com/in/luisfernandoayala"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -690,22 +692,109 @@ export default function Home() {
                     </a>
                   </li>
                 </ul>
+
                 <p className="contact-note">
                   Si crees que puedo aportar en tu equipo o proyecto, estaré
                   encantado de escucharte.
                 </p>
               </div>
 
-              <div>
-                <div className="hero-card">
-                  <div className="hero-card-title">Próximo paso</div>
-                  <p className="section-text">
-                    El siguiente objetivo de este portfolio es añadir ejemplos
-                    reales de dashboards en Power BI, scripts en Python y
-                    automatizaciones con n8n, además de enlaces a repositorios
-                    públicos. Vuelve pronto para ver las novedades.
+              {/* Columna derecha: formulario conectado a n8n */}
+              <div className="contact-card">
+                <h3 className="contact-card-title">Déjame tus datos</h3>
+                <p className="contact-card-text">
+                  Este formulario envía la información a mi flujo en n8n, donde
+                  se guarda en Google Sheets para poder responderte mejor.
+                </p>
+
+                <form
+                  className="contact-form"
+                  method="POST"
+                  action="http://localhost:5678/webhook-test/portfolio-lead"
+                >
+                  <label className="contact-label">
+                    Nombre
+                    <input
+                      type="text"
+                      name="name"
+                      className="contact-input"
+                      required
+                    />
+                  </label>
+
+                  <label className="contact-label">
+                    Email
+                    <input
+                      type="email"
+                      name="email"
+                      className="contact-input"
+                      required
+                    />
+                  </label>
+
+                  <label className="contact-label">
+                    Tipo de ayuda
+                    <select
+                      name="context"
+                      className="contact-input"
+                      defaultValue="consultoria-datos"
+                    >
+                      <option value="Análisis de datos y toma de decisiones">
+    1. Análisis de datos y toma de decisiones
+  </option>
+
+  <option value="Dashboards y visualización (Power BI / R / Python)">
+    2. Dashboards y visualización (Power BI / R / Python)
+  </option>
+
+  <option value="Automatización de procesos (n8n / Power Query / Python)">
+    3. Automatización de procesos (n8n / Power Query / Python)
+  </option>
+
+  <option value="Modelos y análisis estadístico (R / Python)">
+    4. Modelos y análisis estadístico (R / Python)
+  </option>
+
+  <option value="Proyectos para seguros / broker">
+    5. Proyectos para seguros / broker
+  </option>
+
+  <option value="Integración de datos y SQL (datamarts ligeros)">
+    6. Integración de datos y SQL (datamarts ligeros)
+  </option>
+
+  <option value="Optimización de reporting y KPIs">
+    7. Optimización de reporting y KPIs
+  </option>
+
+  <option value="Otro tema">
+    8. Otro tema
+  </option>
+                    </select>
+                  </label>
+
+                  <label className="contact-label">
+                    Mensaje
+                    <textarea
+                      name="message"
+                      className="contact-textarea"
+                      rows={4}
+                      placeholder="Cuéntame brevemente qué necesitas..."
+                      required
+                    />
+                  </label>
+
+                  {/* campo oculto para saber de dónde viene */}
+                  <input type="hidden" name="origin" value="contact-section" />
+
+                  <button type="submit" className="contact-submit">
+                    Enviar mensaje
+                  </button>
+
+                  <p className="contact-helper">
+                    También puedes escribirme directamente por email o LinkedIn.
                   </p>
-                </div>
+                </form>
               </div>
             </div>
           </div>

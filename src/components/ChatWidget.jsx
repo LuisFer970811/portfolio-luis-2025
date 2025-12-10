@@ -1,4 +1,7 @@
+// src/components/ChatWidget.jsx
 import { useState } from "react";
+
+const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/portfolio-lead";
 
 function getBotReply(message) {
   const text = message.toLowerCase();
@@ -32,7 +35,11 @@ function getBotReply(message) {
     );
   }
 
-  if (text.includes("contact") || text.includes("hablar") || text.includes("whatsapp")) {
+  if (
+    text.includes("contact") ||
+    text.includes("hablar") ||
+    text.includes("whatsapp")
+  ) {
     return (
       "Puedes contactarme por email (luis.fernandop081997@gmail.com), " +
       "LinkedIn o WhatsApp. En la sección de Contacto tienes todos los enlaces."
@@ -55,17 +62,38 @@ function getBotReply(message) {
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mode, setMode] = useState("chat"); // "chat" | "contact"
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
       from: "bot",
       text:
-        "Hola 👋 Soy el asistente de Luis. ¿Sobre qué te gustaría saber? " +
-        "Servicios, dashboards, automatización, experiencia o contacto.",
+       "Soy el asistente de Luis.\n\n" +
+"¿Sobre qué te gustaría hablar?\n\n" +
+"Puedo ayudarte con:\n" +
+"• Servicios de datos\n" +
+"• Dashboards\n" +
+"• Automatización\n" +
+"• Proyectos relacionados con seguros\n\n" +
+"Si deseas que Luis te contacte personalmente,\n" +
+"usa el botón \"💼 Dejar mis datos\"."
+
+,
     },
   ]);
 
-  const handleSend = (e) => {
+  // formulario de contacto
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    message: "",
+    context: "widget-contacto",
+    origin: "portfolio-bot",
+  });
+  const [sending, setSending] = useState(false);
+  const [feedback, setFeedback] = useState("");
+
+  const handleSendChat = (e) => {
     e.preventDefault();
     const trimmed = input.trim();
     if (!trimmed) return;
@@ -75,6 +103,41 @@ export default function ChatWidget() {
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
     setInput("");
+  };
+
+  const handleChangeContact = (field, value) => {
+    setContact((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmitContact = async (e) => {
+    e.preventDefault();
+    if (!contact.name || !contact.email || !contact.message) return;
+
+    setSending(true);
+    setFeedback("");
+
+    try {
+      await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(contact),
+      });
+
+      setFeedback("✅ Gracias, he recibido tus datos. Te escribiré pronto.");
+      setContact({
+        name: "",
+        email: "",
+        message: "",
+        context: "widget-contacto",
+        origin: "portfolio-bot",
+      });
+      setMode("chat");
+    } catch (err) {
+      console.error(err);
+      setFeedback("❌ Hubo un problema al enviar. Intenta de nuevo más tarde.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -101,30 +164,110 @@ export default function ChatWidget() {
           </div>
 
           <div className="chat-body">
-            {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={
-                  msg.from === "user"
-                    ? "chat-bubble chat-bubble-user"
-                    : "chat-bubble chat-bubble-bot"
-                }
-              >
-                {msg.text}
-              </div>
-            ))}
+            {mode === "chat" && (
+              <>
+                {messages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={
+                      msg.from === "user"
+                        ? "chat-bubble chat-bubble-user"
+                        : "chat-bubble chat-bubble-bot"
+                    }
+                  >
+                    {msg.text}
+                  </div>
+                ))}
+              </>
+            )}
+
+            {mode === "contact" && (
+              <form className="chat-contact-form" onSubmit={handleSubmitContact}>
+                <input
+                  type="text"
+                  className="chat-input"
+                  placeholder="Tu nombre"
+                  value={contact.name}
+                  onChange={(e) =>
+                    handleChangeContact("name", e.target.value)
+                  }
+                />
+                <input
+                  type="email"
+                  className="chat-input"
+                  placeholder="Tu email"
+                  value={contact.email}
+                  onChange={(e) =>
+                    handleChangeContact("email", e.target.value)
+                  }
+                />
+                <textarea
+                  rows={3}
+                  className="chat-input chat-textarea"
+                  placeholder="Cuéntame brevemente qué necesitas..."
+                  value={contact.message}
+                  onChange={(e) =>
+                    handleChangeContact("message", e.target.value)
+                  }
+                />
+                <div className="chat-contact-actions">
+                  <button
+                    type="button"
+                    className="chat-secondary"
+                    onClick={() => {
+                      setMode("chat");
+                      setFeedback("");
+                    }}
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="submit"
+                    className="chat-send"
+                    disabled={
+                      sending ||
+                      !contact.name ||
+                      !contact.email ||
+                      !contact.message
+                    }
+                  >
+                    {sending ? "Enviando..." : "Enviar"}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
 
-          <form className="chat-input-row" onSubmit={handleSend}>
-            <input
-              type="text"
-              placeholder="Escribe tu pregunta..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="chat-input"
-            />
-            <button type="submit" className="chat-send">➤</button>
-          </form>
+          {/* CTA y caja de texto del chat normal */}
+          {mode === "chat" && (
+            <>
+              <button
+                className="chat-cta"
+                type="button"
+                onClick={() => {
+                  setMode("contact");
+                  setFeedback("");
+                }}
+              >
+                📩 Deja tus datos y nos contactamos contigo
+              </button>
+
+              <form className="chat-input-row" onSubmit={handleSendChat}>
+                <input
+                  type="text"
+                  placeholder="Escribe tu pregunta..."
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  className="chat-input"
+                />
+                <button type="submit" className="chat-send">
+                  ➤
+                </button>
+              </form>
+            </>
+          )}
+
+          {feedback && <p className="chat-feedback">{feedback}</p>}
         </div>
       )}
     </>
