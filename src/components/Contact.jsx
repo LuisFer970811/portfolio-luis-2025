@@ -1,5 +1,52 @@
 // src/components/Contact.jsx
+import { useState } from "react";
+
+// 👉 Pega AQUÍ tu URL del desplegable de Apps Script (la que termina en /exec)
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfyc.../exec";
+
 function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [statusMsg, setStatusMsg] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatusMsg("");
+    setIsSending(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      helpType: formData.get("helpType"), // 👈 nombre alineado con tu Apps Script
+      message: formData.get("message"),
+      origin: "contact-section",
+    };
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      setStatusMsg("Gracias, he recibido tu mensaje. Te responderé en breve.");
+      form.reset();
+    } catch (error) {
+      console.error("Error enviando el formulario:", error);
+      setStatusMsg(
+        "Hubo un problema al enviar el formulario. Puedes escribirme por email o LinkedIn."
+      );
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section id="contacto" className="section">
       <div className="container contact-grid">
@@ -44,7 +91,7 @@ function Contact() {
             <li>
               <span>💬 WhatsApp:</span>{" "}
               <a
-                href="https://wa.me/593984123456" // CAMBIA POR TU NÚMERO REAL
+                href="https://wa.link/ltvczq"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -63,15 +110,11 @@ function Contact() {
         <div className="contact-card">
           <h3 className="contact-card-title">Déjame tus datos</h3>
           <p className="contact-card-text">
-            Este formulario envía tus datos a mi flujo en n8n, donde se guardan
-            en Google Sheets.
+            Este formulario guarda tu mensaje en Google Sheets mediante un
+            script seguro de Google Apps Script.
           </p>
 
-          <form
-            className="contact-form"
-            method="POST"
-            action="http://localhost:5678/webhook/portfolio-lead"
-          >
+          <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <label className="contact-label">
               Nombre
               <input
@@ -95,20 +138,23 @@ function Contact() {
             <label className="contact-label">
               Tipo de ayuda
               <select
-                name="context"
+                name="helpType"
                 className="contact-input"
                 defaultValue="consultoria-datos"
               >
                 <option value="consultoria-datos">
-                  Consultoría de datos / dashboards
+                  1 · Análisis de datos / dashboards
                 </option>
-                <option value="automatizacion-n8n">
-                  Automatización con n8n / procesos
+                <option value="automatizacion-procesos">
+                  2 · Automatización de reporting / procesos
+                </option>
+                <option value="herramientas-stack">
+                  3 · Uso de herramientas (Power BI, SQL, R, Python, n8n)
                 </option>
                 <option value="seguros-broker">
-                  Proyectos para seguros / broker
+                  4 · Proyectos para seguros / broker
                 </option>
-                <option value="otro">Otro tema</option>
+                <option value="otro">5 · Otro tema</option>
               </select>
             </label>
 
@@ -125,13 +171,19 @@ function Contact() {
 
             <input type="hidden" name="origin" value="contact-section" />
 
-            <button type="submit" className="contact-submit">
-              Enviar mensaje
+            <button type="submit" className="contact-submit" disabled={isSending}>
+              {isSending ? "Enviando..." : "Enviar mensaje"}
             </button>
 
             <p className="contact-helper">
               También puedes escribirme directamente por email o LinkedIn.
             </p>
+
+            {statusMsg && (
+              <p className="contact-helper" style={{ marginTop: "0.35rem" }}>
+                {statusMsg}
+              </p>
+            )}
           </form>
         </div>
       </div>

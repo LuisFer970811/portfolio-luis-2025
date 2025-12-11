@@ -1,8 +1,8 @@
 // src/components/ChatWidget.jsx
 import { useState } from "react";
 
-const N8N_WEBHOOK_URL = "http://localhost:5678/webhook/portfolio-lead";
-
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwGKX84a3nP0kDZZOHkb75E9VOUw1A3ESKYdPooIqyXq1_R9R6Cdt-mYV2_4XPIQ6mK/exec";
 function getBotReply(message) {
   const text = message.toLowerCase();
 

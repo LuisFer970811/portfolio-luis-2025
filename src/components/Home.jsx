@@ -710,7 +710,7 @@ export default function Home() {
                 <form
                   className="contact-form"
                   method="POST"
-                  action="http://localhost:5678/webhook-test/portfolio-lead"
+                  action="https://script.google.com/macros/s/AKfycbwGKX84a3nP0kDZZOHkb75E9VOUw1A3ESKYdPooIqyXq1_R9R6Cdt-mYV2_4XPIQ6mK/exec"
                 >
                   <label className="contact-label">
                     Nombre
