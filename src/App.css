@@ -1149,4 +1149,32 @@
     margin-top: 0; /* en móvil no se mueve */
   }
 }
+/* =========================
+   CONTACTO · MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-card-title {
+    text-align: center;
+  }
+
+  .contact-card-text {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
 
