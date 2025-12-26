@@ -408,6 +408,16 @@ export default function Home() {
                     📊 Proyecto 2: Limpieza y análisis descriptivo
                   </a>
                 </div>
+                <div className="project-links">
+                  <a
+                    href="https://luisfer970811.github.io/web-scraping-project/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                     🕷️ Proyecto 3: Manejo de gráficos, funciones y Web Scraping
+                  </a>
+                </div>
               </article>
 
               {/* Python */}
