@@ -1153,11 +1153,12 @@
    CONTACTO · MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
-  .contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
 
   .contact-card {
     width: 100%;
@@ -1178,3 +1179,42 @@
   }
 }
 
+/* ===== CONTACTO: FIX RESPONSIVE (MÓVIL) ===== */
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* En móvil: 1 sola columna */
+@media (max-width: 768px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form{
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Opcional: que el chat no tape el formulario */
+  .chat-widget{
+    bottom: 1rem;
+    right: 1rem;
+    transform: scale(0.9);
+  }
+}
+
+/* Evita desbordamiento horizontal */
+body{
+  overflow-x: hidden;
+}
