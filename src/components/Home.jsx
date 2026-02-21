@@ -475,7 +475,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="btn-primary"
                   >
-                    📈 Proyecto 1: Tendencias demográficas en la Unión Europea (2013–2040)
+                    📈 Proyecto 3: Tendencias demográficas en la Unión Europea (2013–2040)
                   </a>
                 </div>
               </article>
