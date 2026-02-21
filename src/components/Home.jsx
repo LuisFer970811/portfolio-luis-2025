@@ -315,7 +315,7 @@ export default function Home() {
                 <div className="project-header">
                   <div>
                     <h3 className="project-title">
-                      Dashboard de KPIs y cumplimiento en Power BI
+                      Dashboard de KPIs y Gráficos Interactivos
                     </h3>
                     <p className="project-meta">Evolución · Objetivos · Rendimiento</p>
                   </div>
@@ -467,6 +467,16 @@ export default function Home() {
 
                 <div className="project-links">
                   <span style={{ opacity: 0.7 }}>Casos en preparación</span>
+                </div>
+                <div className="project-links">
+                  <a
+                    href="https://datawrapper.dwcdn.net/nv5cN/4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    📈 Proyecto 1: Tendencias demográficas en la Unión Europea (2013–2040)
+                  </a>
                 </div>
               </article>
             </div>
